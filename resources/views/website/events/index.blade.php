@@ -37,7 +37,7 @@
             @endforeach
 
         </div>
-        <div class="mb-8">
+        <div class="mb-8 mt-3">
             <a href="{{ route('home') }}"
                 class="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition">
                 ← Back to Home
