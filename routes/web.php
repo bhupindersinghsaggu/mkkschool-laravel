@@ -6,7 +6,6 @@ use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\Admin\AchievementController;
 
 use App\Models\News;
 use App\Models\Event;
@@ -17,51 +16,60 @@ use App\Models\Event;
 |--------------------------------------------------------------------------
 */
 
-// Home Page
+// Home page (News + Events)
 Route::get('/', function () {
-    $latestNews   = News::latest()->take(3)->get();
-    $latestEvents = Event::orderBy('event_date', 'desc')->take(4)->get();
+    $latestNews = News::latest()->take(3)->get();
+    $events = Event::latest()->take(4)->get();
 
-    return view('website.home', compact('latestNews', 'latestEvents'));
+    return view('website.home', compact('latestNews', 'events'));
 })->name('home');
 
-// Public News
+// Public news page
 Route::get('/news', function () {
     $news = News::latest()->paginate(10);
     return view('website.news', compact('news'));
 })->name('public.news');
 
-// Public Events
-Route::get('/events', function () {
-    $events = Event::orderBy('event_date', 'desc')->paginate(12);
-    return view('website.events.index', compact('events'));
-})->name('events.public');
+//public Events
+Route::get('/events/{event}', function (Event $event) {
+    return view('website.event-detail', compact('event'));
+})->name('events.show');
 
-// Event Detail
+
+// Edit event
+Route::get('/dashboard/events/{event}/edit', [EventController::class, 'edit'])
+    ->name('events.edit');
+
+// Update event
+Route::put('/dashboard/events/{event}', [EventController::class, 'update'])
+    ->name('events.update');
+
+
 Route::get('/events/{event}', [EventController::class, 'show'])
     ->name('events.show');
-
-// Gallery
+// Public gallery
 Route::get('/gallery', [GalleryController::class, 'index'])
     ->name('gallery');
 
-// Admission Enquiry
+// Admission enquiry form submit
 Route::post('/admission-enquiry', [AdmissionController::class, 'store'])
     ->name('admission.store');
 
 
 /*
 |--------------------------------------------------------------------------
-| Authenticated User Routes
+| Authenticated Routes (ALL logged-in users)
 |--------------------------------------------------------------------------
 */
 
 Route::middleware(['auth'])->group(function () {
 
+    // Dashboard (shared)
     Route::get('/dashboard', function () {
         return view('dashboard.index');
     })->name('dashboard');
 
+    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');
 
@@ -79,55 +87,44 @@ Route::middleware(['auth'])->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth', 'role:admin'])->prefix('dashboard')->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Admissions
-    Route::get('/admissions', [AdmissionController::class, 'index'])
+    Route::get('/dashboard/admissions', [AdmissionController::class, 'index'])
         ->name('admissions.index');
 
-    Route::patch('/admissions/{admission}/status',
+    Route::patch(
+        '/dashboard/admissions/{admission}/status',
         [AdmissionController::class, 'updateStatus']
     )->name('admissions.status');
 
-    Route::delete('/admissions/{admission}',
+    Route::delete(
+        '/dashboard/admissions/{admission}',
         [AdmissionController::class, 'destroy']
     )->name('admissions.destroy');
 
-
     // News
-    Route::get('/news', [NewsController::class, 'index'])
+    Route::get('/dashboard/news', [NewsController::class, 'index'])
         ->name('news.index');
 
-    Route::get('/news/create', [NewsController::class, 'create'])
+    Route::get('/dashboard/news/create', [NewsController::class, 'create'])
         ->name('news.create');
 
-    Route::post('/news', [NewsController::class, 'store'])
+    Route::post('/dashboard/news', [NewsController::class, 'store'])
         ->name('news.store');
 
-    Route::delete('/news/{news}', [NewsController::class, 'destroy'])
+    Route::delete('/dashboard/news/{news}', [NewsController::class, 'destroy'])
         ->name('news.destroy');
 
-
-    // Events
-    Route::get('/events', [EventController::class, 'index'])
+    // Events / Achievements
+    Route::get('/dashboard/events', [EventController::class, 'index'])
         ->name('events.index');
 
-    Route::post('/events', [EventController::class, 'store'])
+    Route::post('/dashboard/events', [EventController::class, 'store'])
         ->name('events.store');
 
-    Route::get('/events/{event}/edit', [EventController::class, 'edit'])
-        ->name('events.edit');
-
-    Route::put('/events/{event}', [EventController::class, 'update'])
-        ->name('events.update');
-
-    Route::delete('/events/{event}', [EventController::class, 'destroy'])
+    Route::delete('/dashboard/events/{event}', [EventController::class, 'destroy'])
         ->name('events.destroy');
-
-
-    // ✅ Achievements (CLEAN & CONSISTENT)
-    Route::resource('achievements', AchievementController::class)
-        ->only(['index', 'create', 'store', 'destroy']);
 });
 
 
@@ -137,15 +134,16 @@ Route::middleware(['auth', 'role:admin'])->prefix('dashboard')->group(function (
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth', 'role:staff'])->prefix('dashboard/staff')->group(function () {
+Route::middleware(['auth', 'role:staff'])->group(function () {
 
-    Route::get('/', function () {
+    Route::get('/dashboard/staff', function () {
         return view('dashboard.staff');
     })->name('staff.dashboard');
 
-    Route::get('/admissions', [AdmissionController::class, 'index'])
-        ->name('staff.admissions.index');
+    Route::get(
+        '/dashboard/staff/admissions',
+        [AdmissionController::class, 'index']
+    )->name('staff.admissions.index');
 });
-
 
 require __DIR__ . '/auth.php';

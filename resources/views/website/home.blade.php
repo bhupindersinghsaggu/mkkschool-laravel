@@ -14,9 +14,7 @@
 
 @include('partials.admission-open')
 
-@include('partials.school-achievements', [
-    'latestEvents' => $latestEvents
-])
+@include('partials.school-achievements')
 
 @include('partials.student-corner')
 
