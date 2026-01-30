@@ -112,30 +112,35 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        new Swiper('.achievementsSwiper', {
+    document.addEventListener("DOMContentLoaded", function() {
+        new Swiper(".achievementsSwiper", {
             loop: true,
-            spaceBetween: 24,
+            spaceBetween: 20,
 
             autoplay: {
-                delay: 2500,
+                delay: 3000,
                 disableOnInteraction: false,
             },
 
+            pagination: {
+                el: ".achievementsSwiper .swiper-pagination",
+                clickable: true,
+            },
+
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: ".achievementsSwiper .swiper-button-next",
+                prevEl: ".achievementsSwiper .swiper-button-prev",
             },
 
             breakpoints: {
-                320: {
+                0: {
                     slidesPerView: 1
                 },
-                768: {
+                640: {
                     slidesPerView: 2
                 },
                 1024: {
-                    slidesPerView: 4
+                    slidesPerView: 3
                 },
             },
         });
@@ -167,52 +172,50 @@
 {{-- Latest News --}}
 
 <script>
-    const newsBox = document.getElementById("latest-news");
-    const closeBtn = document.getElementById("close-news");
-    const minimizeBtn = document.getElementById("minimize-news");
-    const newsContent = newsBox.querySelector(".news-content");
-    const reopenBtn = document.getElementById("reopen-news");
+const newsBox = document.getElementById("latest-news");
+const closeBtn = document.getElementById("close-news");
+const minimizeBtn = document.getElementById("minimize-news");
+const newsContent = newsBox.querySelector(".news-content");
+const reopenBtn = document.getElementById("reopen-news");
 
-    // Detect if mobile
-    function isMobile() {
-        return window.innerWidth <= 768;
+// Detect if mobile
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+// Toggle News Box (for mobile only)
+function toggleNewsBox() {
+  if (newsBox.style.display === "none" || newsBox.style.display === "") {
+    newsBox.style.display = "block";
+    if (isMobile()) {
+      newsBox.style.animation = "slideInUp 0.5s forwards";
     }
-
-    // Toggle News Box (for mobile only)
-    function toggleNewsBox() {
-        if (newsBox.style.display === "none" || newsBox.style.display === "") {
-            newsBox.style.display = "block";
-            if (isMobile()) {
-                newsBox.style.animation = "slideInUp 0.5s forwards";
-            }
-        } else {
-            if (isMobile()) {
-                newsBox.style.animation = "slideOutDown 0.5s forwards";
-                setTimeout(() => {
-                    newsBox.style.display = "none";
-                }, 500);
-            }
-        }
+  } else {
+    if (isMobile()) {
+      newsBox.style.animation = "slideOutDown 0.5s forwards";
+      setTimeout(() => { newsBox.style.display = "none"; }, 500);
     }
+  }
+}
 
-    // Close button (on mobile acts same as toggle, on desktop hides box)
-    closeBtn.addEventListener("click", toggleNewsBox);
+// Close button (on mobile acts same as toggle, on desktop hides box)
+closeBtn.addEventListener("click", toggleNewsBox);
 
-    // Minimize / Maximize News
-    minimizeBtn.addEventListener("click", function() {
-        if (newsContent.style.maxHeight === "0px") {
-            newsContent.style.maxHeight = "200px";
-            newsContent.style.opacity = "1";
-            minimizeBtn.textContent = "−";
-        } else {
-            newsContent.style.maxHeight = "0px";
-            newsContent.style.opacity = "0";
-            minimizeBtn.textContent = "+";
-        }
-    });
+// Minimize / Maximize News
+minimizeBtn.addEventListener("click", function() {
+  if (newsContent.style.maxHeight === "0px") {
+    newsContent.style.maxHeight = "200px";
+    newsContent.style.opacity = "1";
+    minimizeBtn.textContent = "−";
+  } else {
+    newsContent.style.maxHeight = "0px";
+    newsContent.style.opacity = "0";
+    minimizeBtn.textContent = "+";
+  }
+});
 
-    // Reopen / Toggle Button (only visible on mobile)
-    reopenBtn.addEventListener("click", toggleNewsBox);
+// Reopen / Toggle Button (only visible on mobile)
+reopenBtn.addEventListener("click", toggleNewsBox);
 </script>
 </body>
 

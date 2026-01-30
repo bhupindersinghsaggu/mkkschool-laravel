@@ -23,15 +23,14 @@
     </noscript>
 
 
-    <!-- Slider CSS Added -->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- FONT AWESOME (ASYNC) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Google reCAPTCHA Keys -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-   
 
     <style>
         [x-cloak] {

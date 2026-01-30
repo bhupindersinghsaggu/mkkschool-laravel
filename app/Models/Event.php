@@ -15,4 +15,3 @@ class Event extends Model
         'button_link',
     ];
 }
-

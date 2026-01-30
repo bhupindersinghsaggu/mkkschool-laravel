@@ -8,55 +8,55 @@ use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
-    // ✅ Admin: list events
+    // Admin list
     public function index()
     {
-        $events = Event::orderBy('event_date', 'desc')->paginate(10);
+        $events = Event::latest()->paginate(10);
         return view('dashboard.events.index', compact('events'));
     }
 
-    // ✅ Store event
+    // Store event
     public function store(Request $request)
     {
         $request->validate([
-            'title'        => 'required|string|max:255',
-            'description'  => 'required|string',
-            'event_date'   => 'required|date',
-            'type'         => 'required|in:event,achievement',
-            'image'        => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'button_link'  => 'nullable|url',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'event_date' => 'required|date',
+            'type' => 'required|in:event,achievement',
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'button_link' => 'nullable|url',
         ]);
 
         $path = $request->file('image')->store('events', 'public');
 
         Event::create([
-            'title'        => $request->title,
-            'description'  => $request->description,
-            'event_date'   => $request->event_date,
-            'type'         => $request->type,
-            'image'        => $path,
-            'button_link'  => $request->button_link,
+            'title' => $request->title,
+            'description' => $request->description,
+            'event_date' => $request->event_date,
+            'type' => $request->type,
+            'image' => $path,
+            'button_link' => $request->button_link,
         ]);
 
         return back()->with('success', 'Event added successfully.');
     }
 
-    // ✅ Edit event
+    // Show edit form
     public function edit(Event $event)
     {
         return view('dashboard.events.edit', compact('event'));
     }
 
-    // ✅ Update event
+    // ✅ UPDATE EVENT (ONLY ONE METHOD)
     public function update(Request $request, Event $event)
     {
         $request->validate([
-            'title'        => 'required|string|max:255',
-            'description'  => 'required|string',
-            'event_date'   => 'required|date',
-            'type'         => 'required|in:event,achievement',
-            'image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'button_link'  => 'nullable|url',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'event_date' => 'required|date',
+            'type' => 'required|in:event,achievement',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'button_link' => 'nullable|url',
         ]);
 
         $data = $request->only([
@@ -67,10 +67,13 @@ class EventController extends Controller
             'button_link',
         ]);
 
+        // Replace image if uploaded
         if ($request->hasFile('image')) {
+
             if ($event->image && Storage::disk('public')->exists($event->image)) {
                 Storage::disk('public')->delete($event->image);
             }
+
             $data['image'] = $request->file('image')->store('events', 'public');
         }
 
@@ -81,7 +84,7 @@ class EventController extends Controller
             ->with('success', 'Event updated successfully.');
     }
 
-    // ✅ Delete event
+    // Delete event
     public function destroy(Event $event)
     {
         if ($event->image && Storage::disk('public')->exists($event->image)) {
@@ -93,7 +96,7 @@ class EventController extends Controller
         return back()->with('success', 'Event deleted successfully.');
     }
 
-    // ✅ Public: event detail page
+    // Public event details
     public function show(Event $event)
     {
         return view('website.event-show', compact('event'));

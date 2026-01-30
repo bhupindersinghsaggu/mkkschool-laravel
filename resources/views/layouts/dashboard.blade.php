@@ -91,16 +91,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('achievements.index') }}"
+                            <a href="{{ route('events.index') }}"
                                 class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                <i class="fa-solid fa-caret-right"></i> Viewphp artisan storage:link
-
-                            </a>
-                        </li>
-                           <li>
-                            <a href="{{ route('achievements.create') }}"
-                                class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                <i class="fa-solid fa-caret-right"></i> Add
+                                <i class="fa-solid fa-caret-right"></i> Add Events/Achievements
                             </a>
                         </li>
 

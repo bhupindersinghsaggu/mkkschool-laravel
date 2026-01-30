@@ -22,7 +22,7 @@
                 </p>
                 <div id="botton-container" class="mt-12 flex flex-col sm:flex-row gap-4  ">
                     <button
-                        class="px-8 py-3 font-semibold text-xl  hover:translate-y-1 transition group  bg-yellow-500  border border-emerald-400 rounded-lg shadow-sm hover:bg-opacity-90">
+                        class="px-8 py-3 font-semibold text-xl  hover:translate-y-1 transition group  bg-yellow-50  border border-emerald-400 rounded-lg shadow-sm hover:bg-opacity-90">
                         Admission Open <i class="fa-solid fa-arrow-right"></i>
                     </button>
                     <button
