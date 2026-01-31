@@ -96,6 +96,17 @@
                                 <i class="fa-solid fa-caret-right"></i> Add Events/Achievements
                             </a>
                         </li>
+<li>
+    <a href="{{ route('videos.index') }}"
+       class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+        </svg>
+        <span>Video Gallery</span>
+    </a>
+</li>
 
 
                     </ul>

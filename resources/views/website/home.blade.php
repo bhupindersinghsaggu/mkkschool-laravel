@@ -1,3 +1,6 @@
+
+
+
 @extends('layouts.app')
 
 @section('title', 'Home')
@@ -17,5 +20,10 @@
 @include('partials.school-achievements')
 
 @include('partials.student-corner')
+
+@include('partials.video-gallery', ['videos' => $videos])
+
+
+
 
 @endsection

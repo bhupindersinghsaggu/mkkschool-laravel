@@ -6,9 +6,10 @@ use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EventController;
-
+use App\Http\Controllers\Admin\VideoController;
 use App\Models\News;
 use App\Models\Event;
+use App\Models\Video;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,21 @@ use App\Models\Event;
 |--------------------------------------------------------------------------
 */
 
-// Home page (News + Events)
+// Home page (News + Events+video)
 Route::get('/', function () {
     $latestNews = News::latest()->take(3)->get();
     $events = Event::latest()->take(4)->get();
+    $videos = Video::latest()->take(3)->get(); // ✅ ADD THIS
 
-    return view('website.home', compact('latestNews', 'events'));
+    return view('website.home', compact('latestNews', 'events', 'videos'));
 })->name('home');
+
+//show all videos on home page
+
+Route::get('/videos', function () {
+    $videos = Video::latest()->paginate(9); // pagination for many videos
+    return view('website.videos', compact('videos'));
+})->name('videos.public');
 
 // Public news page
 Route::get('/news', function () {
@@ -55,7 +64,13 @@ Route::get('/gallery', [GalleryController::class, 'index'])
 Route::post('/admission-enquiry', [AdmissionController::class, 'store'])
     ->name('admission.store');
 
+// for vidoes
 
+Route::get('/videos', function () {
+    return view('videos', [
+        'videos' => \App\Models\Video::latest()->get()
+    ]);
+});
 /*
 |--------------------------------------------------------------------------
 | Authenticated Routes (ALL logged-in users)
@@ -86,6 +101,12 @@ Route::middleware(['auth'])->group(function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
+    Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
+    Route::delete('/videos/{video}', [VideoController::class, 'destroy'])->name('videos.destroy');
+});
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
