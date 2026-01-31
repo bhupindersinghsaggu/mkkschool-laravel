@@ -61,4 +61,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Stroage Link Command
 
-## login to SSH - 
+## login to SSH - ssh -p 65002 u315669183@217.21.85.237
+## run first command- cd ~/domains/saddlebrown-seahorse-473989.hostingersite.com/public_html
+## ryb second command- /opt/alt/php82/usr/bin/php artisan storage:link
