@@ -1,4 +1,4 @@
-<div id="student-corner" class="flex flex-col gap-6  max-w-7xl mx-auto px-4 py-8 md:px-12  lg:py-16">
+<div id="student-corner" class="section-theme">
     <div class="">
         <h2 class="text-center font-semibold leading-tight py-8">
             <span class="inline-block  text-3xl md:text-5xl relative ">Student Corner
@@ -103,4 +103,5 @@
         </div>
     </div>
 </div>
+
 

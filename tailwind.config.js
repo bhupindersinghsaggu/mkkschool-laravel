@@ -14,6 +14,8 @@ export default {
             fontFamily: {
                 sans: ['Lexend', 'ui-sans-serif', 'system-ui'],
             },
+
+           
         },
     },
 

@@ -40,7 +40,7 @@
         <div class="mt-8">
             <a href="{{ $event->button_link }}"
                target="_blank"
-               class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition">
+               class="btn btn-primary">
                 View Photos →
             </a>
         </div>

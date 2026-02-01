@@ -1,5 +1,5 @@
 <section id="about-school" class="flex flex-col gap-6 max-w-7xl mx-auto px-4 py-8 md:px-12  lg:py-16 ">
-    <div class="max-w-7xl mx-auto ">
+    <div class="section-theme ">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-3xl lg:text-4xl font-semibold leading-tight">
@@ -19,7 +19,7 @@
                     curriculum.
                 </p>
                 <a href="#"
-                    class="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 text-white px-6 py-3 rounded font-medium transition">
+                    class="btn-secondry my-4">
                     More About Us →
                 </a>
             </div>

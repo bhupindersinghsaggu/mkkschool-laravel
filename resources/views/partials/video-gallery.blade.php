@@ -1,6 +1,6 @@
 @if (isset($videos) && $videos->count())
     <section class="py-12 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="section-theme px-4">
 
             <h2 class="text-3xl font-bold text-center mb-8">
                 Video Gallery
@@ -8,16 +8,20 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach ($videos as $video)
-                    <div class="bg-white rounded shadow overflow-hidden">
-                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/{{ $video->youtube_id }}"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="px-4 py-4">
+                        <div class="bg-white shadow overflow-hidden px-4 py-4  border border-gray-200   hover:border-blue-400">
+                            <iframe class="w-full h-56  rounded-lg"
+                                src="https://www.youtube.com/embed/{{ $video->youtube_id }}" frameborder="0"
+                                allowfullscreen>
+                            </iframe>
 
-                        @if ($video->title)
-                            <div class="p-3 font-semibold text-center">
-                                {{ $video->title }}
-                            </div>
-                        @endif
+                            @if ($video->title)
+                                <div class="py-3 mt-3 font-semibold ">
+                                    <span class="text-lg px-3 py-1 rounded-full bg-green-100 text-green-700">
+                                        {{ $video->title }}</span>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 @endforeach
             </div>

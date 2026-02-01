@@ -1,11 +1,11 @@
 <section id="admission-open"
     class="bg-gradient-to-r from-pink-600 via-red-500 to-pink-400 text-white px-4 py-8 md:px-12  lg:py-16">
-    <div class="max-w-7xl mx-auto ">
+    <div class="section-theme ">
         <h2 class="text-2xl  py-4 md:py-8 mb-4  md:text-5xl font-semibold leading-tight text-center">
             <span class="text-gray-800 mb-3 mt-3 text-3xl lg:text-5xl"> Admission Open For<span class="text-gray-800">
                     2026-27</span>
         </h2>
-        <div class="grid grid-cols-1 gap-3 lg:grid-cols-2   overflow-hidden">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2  overflow-hidden">
             <!-- Left Image -->
             <div class="hidden lg:block">
                 <img src="./assets/images/admission.webp" alt="Counsellor"
@@ -63,10 +63,12 @@
                     @error('g-recaptcha-response')
                         <p class="text-red-200 text-sm mt-2">{{ $message }}</p>
                     @enderror
-
-                    <button type="submit" class="border border-white px-8 py-3 rounded font-semibold w-fit">
+                    <button type="submit" class="btn btn-outline border border-white text-white mb-3 px-4 font-semibold w-fit">
                         Send Message
                     </button>
+                    {{-- <button type="submit" class="border border-white px-8 py-3 rounded font-semibold w-fit">
+                        Send Message
+                    </button> --}}
                 </form>
             </div>
         </div>

@@ -32,7 +32,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primarys">
                         Read More
                     </a>
                 </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -201,7 +201,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>
@@ -257,7 +257,7 @@
                 </div>
                 <div class="px-4 py-4">
                     <a href="#"
-                        class="inline-flex items-center gap-2 hover:translate-y-1 transition  bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 hover: text-white px-6 py-3 rounded font-medium transition">
+                        class="btn-primary">
                         Read More
                     </a>
                 </div>

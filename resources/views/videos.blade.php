@@ -13,7 +13,7 @@
                     </iframe>
 
                     @if ($video->title)
-                        <div class="p-3 text-center font-semibold">
+                        <div class="btn btn-primary">
                             {{ $video->title }}
                         </div>
                     @endif
