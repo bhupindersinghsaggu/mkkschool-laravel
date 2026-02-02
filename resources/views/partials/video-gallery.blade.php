@@ -1,16 +1,15 @@
 @if (isset($videos) && $videos->count())
     <section class="py-12 bg-gray-50">
         <div class="section-theme px-4">
-
-            <h2 class="text-3xl font-bold text-center mb-8">
-                Video Gallery
+            <h2 class="text-center font-semibold leading-tight py-8">
+                <span class="inline-block  text-3xl md:text-5xl relative "> Video Gallery
             </h2>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach ($videos as $video)
-                    <div class="px-4 py-4">
-                        <div class="bg-white shadow overflow-hidden px-4 py-4  border border-gray-200   hover:border-blue-400">
-                            <iframe class="w-full h-56  rounded-lg"
+                    <div
+                        class="px-4 py-4 border border-gray-200 hover:border-gray-300/20 shadow-base-300/20 rounded-2xl p-2 shadow-lg">
+                        <div class="overflow-hidden">
+                            <iframe class="w-full h-80  rounded-lg"
                                 src="https://www.youtube.com/embed/{{ $video->youtube_id }}" frameborder="0"
                                 allowfullscreen>
                             </iframe>
@@ -27,7 +26,7 @@
             </div>
             <div class="text-center mt-8">
                 <a href="{{ url('/videos') }}"
-                    class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+                    class="btn btn-secondry">
                     View All Videos
                 </a>
             </div>

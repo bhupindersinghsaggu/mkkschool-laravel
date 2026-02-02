@@ -3,7 +3,7 @@
 @section('title', $event->title)
 
 @section('content')
-<div class="max-w-5xl mx-auto px-4 py-10">
+<div class="max-w-5xl mx-auto px-4 py-10 ">
 
     <!-- Badge -->
     <span class="inline-block mb-3 px-4 py-1 text-sm font-semibold rounded-full
