@@ -21,6 +21,8 @@
 
 @include('partials.student-corner')
 
+@include('partials.principal-message')
+
 @include('partials.video-gallery', ['videos' => $videos])
 
 
