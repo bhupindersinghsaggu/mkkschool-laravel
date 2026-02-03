@@ -14,7 +14,7 @@
                 </div>
                 <div class="mt-5 flex items-center justify-between">
                     <div>
-                        <span class="text-lg font-semibold text-gray-500 ">Total Enquiries</span>
+                        <a href="{{ route('admissions.index') }}">    <span class="text-lg font-semibold text-gray-500 ">Total Enquiries</span></a>
                     </div>
                     <span class="flex items-center gap-1   py-0.5 pl-2 pr-2.5 text-2xl font-bold ">
                         <h3 class="text-title-sm font-bold  dark:text-white/90 bg-green-100 text-green-700 px-4 py-2 rounded-full h-12 w-12">
@@ -32,11 +32,31 @@
                 </div>
                 <div class="mt-5 flex items-center justify-between ">
                     <div>
-                        <span class="text-lg font-semibold text-gray-500 ">Total News</span>
+                       <a href="{{ route('news.index') }}">     <span class="text-lg font-semibold text-gray-500 ">Total News</span></a>
                     </div>
                     <span class="flex items-center gap-1   py-0.5 pl-2 pr-2.5 text-2xl font-bold ">
                         <h3 class=" text-title-sm font-bold  dark:text-white/90 bg-green-100 text-green-700 px-4 py-2 rounded-full h-12 w-12">
                             {{ \App\Models\News::count() }}
+                        </h3>
+                    </span>
+                </div>
+            </div>
+        @endif
+
+
+        @if (auth()->user()->role === 'admin')
+            <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+                <div
+                    class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700  hover:bg-blue-300">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="mt-5 flex items-center justify-between ">
+                    <div>
+                        <a href="{{ route('events.index') }}">    <span class="text-lg font-semibold text-gray-500 ">Events/Achievements</span></a>
+                    </div>
+                    <span class="flex items-center gap-1   py-0.5 pl-2 pr-2.5 text-2xl font-bold ">
+                        <h3 class=" text-title-sm font-bold  dark:text-white/90 bg-green-100 text-green-700 px-4 py-2 rounded-full h-12 w-12">
+                            {{ \App\Models\Event::count() }}
                         </h3>
                     </span>
                 </div>

@@ -21,7 +21,7 @@
 </header>
 <nav class="p-3 flex items-center max-w-7xl mx-auto ">
     <a href="/" id="brand" class="flex gap-2 items-center flex-1">
-        <img src="{{ asset('assets/images/logo.png') }}" class="">
+        <img src="{{ asset('assets/images/logo.webp') }}" class="">
     </a>
     <div id="nav-menu" class="hidden lg:flex gap-12">
         <a href="" class="font-semi-bold hover:text-primary">Home</a>

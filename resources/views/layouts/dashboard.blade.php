@@ -32,8 +32,8 @@
 
         <!-- Logo -->
         <div class="p-4 font-semibold text-sm border-b flex gap-4 items-center justify-start ">
-            <img src="https://i.pravatar.cc/40" alt="User Avatar" class="w-9 h-9 rounded-full border" />
-            <div class="text-left text-lg"> Admin Login</div>
+            <img src="{{ asset('assets/images/logo.png') }}" alt="User Avatar" class="w-9 h-9 rounded-full border" />
+            <div class="text-left text-lg"> M.K.K. School</div>
         </div>
 
         <!-- Menu -->
@@ -65,19 +65,13 @@
                                 <i class="fa-solid fa-caret-right"></i> View Admissions
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('admissions.index') }}"
-                                class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                <i class="fa-solid fa-caret-right"></i> Add Admission
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li x-data="{ openSub: false }" class="rounded">
                     <button @click="openSub = !openSub"
                         class="w-full flex items-center justify-between px-4 py-2 rounded hover:bg-gray-200">
                         <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-arrows-down-to-people"></i>
+                            <i class="fa-solid fa-calendar"></i>
                             News/Updates
                         </div>
                         <i class="fa-solid fa-angle-down transition-transform" :class="openSub ? 'rotate-180' : ''"></i>
@@ -97,15 +91,13 @@
                             </a>
                         </li>
                         <li>
+                            <li>
                         <a href="{{ route('videos.index') }}"
-                        class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"/>
-                            </svg>
-                            <span>Video Gallery</span>
+                        class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
+                           
+                            <i class="fa-solid fa-caret-right"></i>Video Gallery
                         </a>
+                            </li>
                     </li>
                     </ul>
                 </li>
@@ -133,7 +125,7 @@
                 <!-- Trigger -->
                 <button @click="open = !open" class="flex items-center gap-2 rounded-full focus:outline-none">
                     <!-- Avatar -->
-                    <img src="https://i.pravatar.cc/40" alt="User Avatar" class="w-9 h-9 rounded-full border" />
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="User Avatar" class="w-9 h-9 rounded-full border" />
 
                     <!-- Name -->
                     <span class="hidden md:block font-medium text-gray-700">
