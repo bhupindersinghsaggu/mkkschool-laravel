@@ -82,25 +82,14 @@
         </div>
     </div>
 </section>
+<!-- ================= Alpine Scope ================= -->
 
-{{-- latest News --}}
+<!-- Latest News Box -->
+<!-- Latest News Box -->
 
 
-{{-- <div id="latest-news" class="bg-gradient-to-r from-pink-600 via-red-500 to-pink-400 text-white">
-    <div class="news-header">
-        <span >Latest News</span>
-        <div>
-            <button id="minimize-news">−</button>
-            <button id="close-news">&times;</button>
-        </div>
-    </div>
-    <div class="news-content">
-        <iframe
-            src="https://curtina.in/DSPSKN/_EazySchool/FormsWeb/DSPSKN/NewsEvents.aspx?AppId=DSPSKN&cdn=http://curtina.in/DSPSKN"></iframe>
-    </div>
-</div> --}}
 
-<!-- Floating Reopen Button -->
+
 
 <!-- Copyright section-->
 <section id="copy-right" class="max-w-7xl mx-auto flex items-center px-2 py-2">
@@ -148,75 +137,13 @@
 </script>
 
 <script src="./assets/scripts.js" defer></script>
-{{-- <script>
-    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-        e.preventDefault();
 
-        // Replace with your WhatsApp number
-        const phoneNumber = "919034252500";
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-        const message = document.getElementById("message").value;
-        const classes = document.getElementById("classes").value;
-        const source = document.getElementById("source").value;
-        const text = `Hello, my name is: ${name}
-          Phone: ${phone}
-		  Inquiry About: ${classes} 
-		  Message: ${message} 
-		  Source of Information: ${source}`;
-        const url = `https://wa.me/${phoneNumber}?text=${text}`;
-        window.open(url, 'index.php');
-    });
-</script> --}}
 
 {{-- Latest News --}}
 
-<script>
-const newsBox = document.getElementById("latest-news");
-const closeBtn = document.getElementById("close-news");
-const minimizeBtn = document.getElementById("minimize-news");
-const newsContent = newsBox.querySelector(".news-content");
-const reopenBtn = document.getElementById("reopen-news");
 
-// Detect if mobile
-function isMobile() {
-  return window.innerWidth <= 768;
-}
 
-// Toggle News Box (for mobile only)
-function toggleNewsBox() {
-  if (newsBox.style.display === "none" || newsBox.style.display === "") {
-    newsBox.style.display = "block";
-    if (isMobile()) {
-      newsBox.style.animation = "slideInUp 0.5s forwards";
-    }
-  } else {
-    if (isMobile()) {
-      newsBox.style.animation = "slideOutDown 0.5s forwards";
-      setTimeout(() => { newsBox.style.display = "none"; }, 500);
-    }
-  }
-}
 
-// Close button (on mobile acts same as toggle, on desktop hides box)
-closeBtn.addEventListener("click", toggleNewsBox);
-
-// Minimize / Maximize News
-minimizeBtn.addEventListener("click", function() {
-  if (newsContent.style.maxHeight === "0px") {
-    newsContent.style.maxHeight = "200px";
-    newsContent.style.opacity = "1";
-    minimizeBtn.textContent = "−";
-  } else {
-    newsContent.style.maxHeight = "0px";
-    newsContent.style.opacity = "0";
-    minimizeBtn.textContent = "+";
-  }
-});
-
-// Reopen / Toggle Button (only visible on mobile)
-reopenBtn.addEventListener("click", toggleNewsBox);
-</script>
 </body>
 
 </html>
