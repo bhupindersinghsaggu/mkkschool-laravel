@@ -10,9 +10,15 @@
 
     <div class="max-w-8xl mx-auto px-4 py-8">
 
-        <h1 class="text-3xl font-bold mb-6">
-            Admission Enquiries
-        </h1>
+        <div class="flex justify-between mb-4">
+            <h1 class="text-2xl font-bold mb-6">View Inquiries</h1>
+            <div>
+                <a href="{{ route('news.index') }}" class="btn btn-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+
 
         {{-- Success Message --}}
         @if (session('success'))
