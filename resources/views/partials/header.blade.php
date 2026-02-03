@@ -60,7 +60,7 @@
     <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
         <div id="nav-bar" class="flex justify-between">
             <a href="/" id="brand" class="flex gap-2 items-center">
-                <img src="{{ asset('assets/images/logo.png') }}">
+                <img src="{{ asset('assets/images/logo.webp') }}">
             </a>
             <button class="p-2 md:hidden" onclick="handleMenu()">
                 <i class="fa-solid fa-xmark text-gray-300"></i>
@@ -91,7 +91,7 @@
         </div>
         <div class="h-[1px] bg-gray-100"></div>
         <button class=" mt-6 flex w-full md:flex gap-2 items-center  px-6 py-4 rounded-lg hover:bg-gray-50">
-            <a href="#"
+            <a href="{{ route('login') }}""
                 class="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-indigo-600 via-blue-500 to-blue-400 hover:bg-pink-700 text-white px-6 py-3 rounded font-medium transition">
                 ERP Login →
             </a>

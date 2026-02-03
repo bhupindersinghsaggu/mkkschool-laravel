@@ -85,7 +85,7 @@ class AdmissionController extends Controller
         } catch (\Throwable $e) {
             // do nothing (important)
         }
-        return back()->with('success', 'Thank you! Our counsellor will contact you soon.');
+        return back()->with('success', 'Our counsellor will contact you soon.');
     }
 
 
