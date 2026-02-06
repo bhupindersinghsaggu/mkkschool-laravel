@@ -63,7 +63,7 @@
                             <option class="text-black">Word of Mouth</option>
                         </select>
 
-                        <textarea name="message" rows="4"
+                        <textarea name="message" rows="2"
                             class="text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0"
                             placeholder="Message"></textarea>
                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}">

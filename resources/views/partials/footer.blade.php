@@ -82,14 +82,75 @@
         </div>
     </div>
 </section>
-<!-- ================= Alpine Scope ================= -->
+<!-- ================= Footer Mobile icon Section  ================= -->
 
-<!-- Latest News Box -->
-<!-- Latest News Box -->
+<footer
+    class="fixed bottom-0 left-0 w-full bg-gradient-to-r from-gray-100 to-gray-200
+           py-4 shadow-[0_-5px_15px_rgba(0,0,0,0.1)]
+           rounded-t-2xl z-[1000]
+           block md:hidden">
+    <div class="flex justify-around items-center">
 
+        <!-- Book List -->
+        <a href="/booklist.php"
+            class="flex flex-col items-center flex-1 text-gray-600 transition
+                  hover:-translate-y-1 hover:text-pink-600">
+            <div
+                class="w-12 h-12 flex items-center justify-center rounded-full
+           bg-pink-100 shadow-md transition
+           hover:scale-110 hover:rotate-3">
+                <i class="fa-solid fa-book text-pink-700 text-[22px]"></i>
+            </div>
+            <span class="text-xs font-medium mt-1">Book List</span>
+        </a>
 
+        <!-- Staff Login -->
+        <a href="https://mkkschool.com/school-reports/auth/login.php"
+            class="flex flex-col items-center flex-1 text-gray-600 transition
+                  hover:-translate-y-1 hover:text-green-600">
+            <div
+                class="w-12 h-12 flex items-center justify-center rounded-full
+           bg-green-100 shadow-md transition
+           hover:scale-110 hover:rotate-3">
+                <i class="fa-solid fa-right-to-bracket text-green-700 text-[22px]"></i>
+            </div>
+            <span class="text-xs font-medium mt-1">Staff Login</span>
+        </a>
 
+        <!-- Pay Online -->
+        <a href="https://curtina.in/mkk/forms/frmstdPayOnline.aspx"
+            class="flex flex-col items-center flex-1 text-gray-600 transition
+                  hover:-translate-y-1 hover:text-pink-600">
+            <div
+                class="w-12 h-12 flex items-center justify-center rounded-full
+           bg-pink-100 shadow-md transition
+           hover:scale-110 hover:rotate-3">
+                <i class="fas fa-credit-card  text-pink-700 text-[22px]"></i>
+            </div>
+            <span class="text-xs font-medium mt-1">Pay Online</span>
+        </a>
+        <!-- ERP Login -->
 
+        <a href="https://curtina.in/MKK"
+            class="flex flex-col items-center flex-1 text-gray-600 transition
+                  hover:-translate-y-1 hover:text-green-600">
+            <div
+                class="w-12 h-12 flex items-center justify-center rounded-full
+           bg-green-100 shadow-md transition
+           hover:scale-110 hover:rotate-3">
+                <i class="fa-solid fa-paper-plane text-green-700 text-[22px]"></i>
+            </div>
+            <span class="text-xs font-medium mt-1">ERP Login</span>
+        </a>
+    </div>
+</footer>
+
+<!--pay online desktop-->
+
+<div class="hidden lg:block md:block fixed bottom-[300px] right-[20px] z-[99] border-0 outline-none cursor-pointer">
+    <a href="https://curtina.in/mkk/forms/frmstdPayOnline.aspx" target="_blank"><img onclick="topFunction()"
+            id="btnGoToTop" src="{{ asset('assets/images/ss.png') }}" alt="" class="w-[70px] h-[70px] rounded-full cursor-pointer"></a>
+</div>
 
 <!-- Copyright section-->
 <section id="copy-right" class="max-w-7xl mx-auto flex items-center px-2 py-2">
@@ -135,14 +196,7 @@
         });
     });
 </script>
-
 <script src="./assets/scripts.js" defer></script>
-
-
-{{-- Latest News --}}
-
-
-
 
 </body>
 

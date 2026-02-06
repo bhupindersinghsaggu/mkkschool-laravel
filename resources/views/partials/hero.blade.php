@@ -25,10 +25,10 @@
                         class="px-8 py-3 font-semibold text-xl  hover:translate-y-1 transition group  bg-yellow-50  border border-emerald-400 rounded-lg shadow-sm hover:bg-opacity-90">
                         Admission Open <i class="fa-solid fa-arrow-right"></i>
                     </button>
-                    <button
+                    <a href="tel:+917988968776"
                         class="px-8 py-3 font-semibold text-xl rounded-lg text-yellow-300  border border-white shadow-sm hover:bg-opacity-90">
                         Call Now <i class="fa-solid fa-phone"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
             <!-- Right Section -->
