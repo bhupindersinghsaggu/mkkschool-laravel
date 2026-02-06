@@ -83,6 +83,9 @@
                     <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Faculty</a>
                     <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>
                     <a href="{{ route('public.news') }}" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>
+                    <a href="{{ route('teachers.public') }}" class="block p-2 hover:bg-gray-100 rounded-lg">Staff
+                        Details</a>
+                    </a>
                 </div>
             </div>
 

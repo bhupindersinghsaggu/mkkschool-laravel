@@ -81,24 +81,40 @@
                         <li>
                             <a href="{{ route('news.index') }}"
                                 class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                <i class="fa-solid fa-caret-right"></i> Add News/Update
+                                <i class="fa-solid fa-caret-right"></i> Add News
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('events.index') }}"
                                 class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                <i class="fa-solid fa-caret-right"></i> Add Events/Achievements
+                                <i class="fa-solid fa-caret-right"></i> Add Events
                             </a>
                         </li>
                         <li>
-                            <li>
                         <a href="{{ route('videos.index') }}"
                         class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                           
-                            <i class="fa-solid fa-caret-right"></i>Video Gallery
+                            <i class="fa-solid fa-caret-right"></i>Add Video
                         </a>
-                            </li>
-                    </li>
+                        </li>
+                    </ul>
+                </li>
+                <li x-data="{ openSub: false }" class="rounded">
+                    <button @click="openSub = !openSub"
+                        class="w-full flex items-center justify-between px-4 py-2 rounded hover:bg-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-calendar"></i>
+                            Teachers
+                        </div>
+                        <i class="fa-solid fa-angle-down transition-transform" :class="openSub ? 'rotate-180' : ''"></i>
+                    </button>
+
+                    <ul x-show="openSub" x-transition class="ml-4 mt-1 space-y-1 overflow-hidden">
+                        <li>
+                            <a href="{{ route('teachers.create') }}"
+                                class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
+                                <i class="fa-solid fa-caret-right"></i> Add
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

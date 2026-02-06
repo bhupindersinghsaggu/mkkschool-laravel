@@ -13,11 +13,11 @@
 
 @include('partials.about-home')
 
+@include('partials.school-achievements', ['events' => $events]) 
+
 @include('partials.facilities')
 
 @include('partials.admission-open')
-
-@include('partials.school-achievements', ['events' => $events]) 
 
 @include('partials.student-corner')
 

@@ -62,6 +62,25 @@
                 </div>
             </div>
         @endif
+
+        @if (auth()->user()->role === 'admin')
+            <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+                <div
+                    class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 text-red-700  hover:bg-red-300">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="mt-5 flex items-center justify-between">
+                    <div>
+                        <a href="{{ route('admissions.index') }}">    <span class="text-lg font-semibold text-gray-500 ">Total Active Teacher</span></a>
+                    </div>
+                    <span class="flex items-center gap-1   py-0.5 pl-2 pr-2.5 text-2xl font-bold ">
+                        <h3 class="text-title-sm font-bold  dark:text-white/90 bg-green-100 text-green-700 px-4 py-2 rounded-full h-12 w-12">
+                            {{ \App\Models\Teacher::count() }}
+                        </h3>
+                    </span>
+                </div>
+            </div>
+        @endif
         <div class="bg-white p-6 rounded shadow hidden ">
             <div class="rounded-2xl border border-gray-200 p-5 dark:border-gray-800 bg-slate-100 hover:bg-slate-200 md:p-6">
                 <div
