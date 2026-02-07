@@ -20,6 +20,13 @@ use App\Models\Teacher;
 |--------------------------------------------------------------------------
 */
 
+//show all webpage to website
+
+Route::get('/about-us', function () {
+    return view('website.about-us');
+})->name('about-us');
+
+
 // Home page (News + Events+video)
 Route::get('/', function () {
     $latestNews = News::latest()->take(3)->get();
@@ -35,6 +42,8 @@ Route::get('/teachers', function () {
     $teachers = Teacher::orderBy('type')->get();
     return view('website.teachers', compact('teachers'));
 })->name('teachers.public');
+
+
 
 //show all videos on home page
 

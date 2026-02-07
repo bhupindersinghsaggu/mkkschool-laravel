@@ -48,3 +48,17 @@
 </section>
 
 
+
+<section class="section-theme ">
+
+    <div class="flex justify-between">
+        <div class="text 3xl">
+            Admission now Open for Session 2026-27
+        </div>
+        <a href="#" class="btn btn-primary">
+            Click Here
+
+        </a>
+
+    </div>
+</section>

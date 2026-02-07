@@ -25,7 +25,7 @@
     </a>
     <div id="nav-menu" class="hidden lg:flex gap-12">
         <a href="" class="font-semi-bold hover:text-primary">Home</a>
-        <a href="" class="font-semi-bold hover:text-primary">About</a>
+        <a href="{{route ('about-us')}}" class="font-semi-bold hover:text-primary">About</a>
         <div class="relative group">
             <button class="font-semi-bold hover:text-primary flex items-center gap-1">
                 Academic
