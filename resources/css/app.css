@@ -28,7 +28,9 @@
         @apply max-w-7xl mx-auto px-4 py-12;
     }
 
-    
+    .heading-section-color{
+        @apply bg-gradient-to-r from-blue-600 via-sky-500 to-sky-400 text-white;
+    }
 
 }
 

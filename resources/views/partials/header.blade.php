@@ -25,13 +25,30 @@
     </a>
     <div id="nav-menu" class="hidden lg:flex gap-12">
         <a href="" class="font-semi-bold hover:text-primary">Home</a>
-        <a href="{{route ('about-us')}}" class="font-semi-bold hover:text-primary">About</a>
+        <div class="relative group">
+            <button class="font-semi-bold hover:text-primary flex items-center gap-1">
+                About
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <!-- Submenu -->
+            <div
+                class="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-lg
+               opacity-0 invisible
+               group-hover:opacity-100 group-hover:visible
+               transition-all duration-200 z-50">
+                <a href="{{ route('about-us') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">About
+                    School</a>
+                <a href="{{ route('cbsemandate') }}" class="block px-4 py-3 hover:bg-gray-100">
+                    Mandatory Disclosure</a>
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100">Faculty</a>
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100 rounded-b-lg">Admissions</a>
+            </div>
+        </div>
         <div class="relative group">
             <button class="font-semi-bold hover:text-primary flex items-center gap-1">
                 Academic
                 <i class="fa-solid fa-chevron-down text-sm"></i>
             </button>
-
             <!-- Submenu -->
             <div
                 class="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-lg
@@ -72,14 +89,14 @@
             <div class="m-3">
                 <button onclick="toggleSubmenu()"
                     class="w-full flex justify-between items-center p-3 font-semi-bold hover:bg-gray-300 rounded-lg">
-                    Academic
+                    About
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
                 <!-- Mobile Submenu -->
                 <div id="mobile-submenu" class="hidden ml-4 mt-2">
-                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Curriculum</a>
-                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Examination</a>
+                    <a href="{{ route('about-us') }}" class="block p-2 hover:bg-gray-100 rounded-lg">About School</a>
+                    <a href="{{ route('cbsemandate') }}" class="block p-2 hover:bg-gray-100 rounded-lg">Mandatory Disclosure</a>
                     <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Faculty</a>
                     <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>
                     <a href="{{ route('public.news') }}" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>

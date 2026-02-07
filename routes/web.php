@@ -26,6 +26,14 @@ Route::get('/about-us', function () {
     return view('website.about-us');
 })->name('about-us');
 
+Route::get('/cbsemandate', function () {
+    return view('website.cbsemandate');
+})->name('cbsemandate');
+
+
+
+
+
 
 // Home page (News + Events+video)
 Route::get('/', function () {
