@@ -31,7 +31,17 @@ Route::get('/cbsemandate', function () {
 })->name('cbsemandate');
 
 
+Route::get('/library', function () {
+    return view('website.library');
+})->name('library');
 
+Route::get('/computerlab', function () {
+    return view('website.computerlab');
+})->name('computerlab');
+
+Route::get('/chemistery', function () {
+    return view('website.chemistery');
+})->name('chemistery');
 
 
 
@@ -59,6 +69,10 @@ Route::get('/videos', function () {
     $videos = Video::latest()->paginate(9); // pagination for many videos
     return view('website.videos', compact('videos'));
 })->name('videos.public');
+
+
+
+
 
 // Public news page
 Route::get('/news', function () {
