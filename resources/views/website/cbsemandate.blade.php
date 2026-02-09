@@ -7,7 +7,7 @@
     <section class="heading-section-color py-16">
         <div class="flex justify-center items-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl"> About us</h1>
-    </section>
+    </section> 
 
     <section class="section-theme">
         <div class="max-w-6xl mx-auto px-4 space-y-10 text-sm">
