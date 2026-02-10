@@ -25,8 +25,8 @@
             </div>
             <div>
                 <div class="">
-                    <img src="./assets/images/about-home.jpg" loading="lazy" decoding="async" width="600"
-                        height="400" alt="About School" class="border border-blue-500 p-4 rounded hover:translate-y-1 ">
+                    <img src="./assets/images/about-us-home.png" loading="lazy" decoding="async" width="600"
+                        height="400" alt="About School" class=" p-4 rounded  ">
 
                 </div>
             </div>

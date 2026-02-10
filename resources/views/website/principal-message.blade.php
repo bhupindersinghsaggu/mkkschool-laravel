@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="md:col-span-1">
-                <img src="./assets/images/faclities/chem.webp" alt="School Campus" class=" shadow-lg max-w-md rounded-lg">
+                <img src="./assets/images/principal.png" alt="School Campus" class=" shadow-lg max-w-md rounded-lg">
             </div>
         </div>
     </section>
