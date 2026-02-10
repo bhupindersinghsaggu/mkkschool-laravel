@@ -10,6 +10,14 @@
     </section>
 
     <section class="section-theme">
+        <div class="max-w-6xl mx-auto  items-center">
+            <div>
+                <div>
+                    <img src="./assets/images/about.jpg" alt="School Campus" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+    </section>
+    <section class="section-theme">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div>
                 <h2 class="text-2xl font-bold text-blue-900 mb-4">Who We Are</h2>
@@ -23,9 +31,7 @@
                     and technology-driven education.
                 </p>
             </div>
-            <div>
-                <img src="./assets/images/about-us.jpg" alt="School Campus" class="rounded-lg shadow-lg w-full">
-            </div>
+
         </div>
     </section>
     <section class="section-theme">
@@ -33,12 +39,18 @@
             <div class="md:col-span-2">
                 <h2 class="text-2xl font-bold text-blue-900 mb-4">History</h2>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    MKK School was set up in 1953 by our founder chairman, Rai Bahadur Dr. Maharaj Krishna Kapur. Presently
-                    it is run by Dr. Maharaj Krishna Kapur Educational Charitable Trust and M anagement Society. It is a
-                    co-educational day school having a strength of twenty nine hundred students. The school has an excellent
-                    infrastructure which includes a huge sports complex, laboratories (Physics, Chemistry, Bio, I.T., Maths,
-                    Artificial Intelligence & Robotics, Tinkering) canteen, gym, library, auditorium, multipurpose hall,
-                    activity block (music, art, dance) smart classrooms, charitable school dispensary and artificial limb
+                    MKK School was set up in 1953 by our founder chairman, Rai Bahadur Dr. Maharaj Krishna
+                    Kapur. Presently
+                    it is run by Dr. Maharaj Krishna Kapur Educational Charitable Trust and M anagement Society.
+                    It is a
+                    co-educational day school having a strength of twenty nine hundred students. The school has
+                    an excellent
+                    infrastructure which includes a huge sports complex, laboratories (Physics, Chemistry, Bio,
+                    I.T., Maths,
+                    Artificial Intelligence & Robotics, Tinkering) canteen, gym, library, auditorium,
+                    multipurpose hall,
+                    activity block (music, art, dance) smart classrooms, charitable school dispensary and
+                    artificial limb
                     centre.
                 </p>
             </div>

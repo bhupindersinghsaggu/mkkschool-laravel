@@ -55,6 +55,37 @@ Route::get('/math', function () {
     return view('website.math');
 })->name('math');
 
+Route::get('/fee-structure', function () {
+    return view('website.fee-structure');
+})->name('fee-structure');
+
+Route::get('/booklist', function () {
+    return view('website.booklist');
+})->name('booklist');
+
+Route::get('/transport-rules', function () {
+    return view('website.transport-rules');
+})->name('transport-rules');
+
+
+Route::get('/dance-music', function () {
+    return view('website.dance-music');
+})->name('dance-music');
+
+Route::get('/transport', function () {
+    return view('website.transport');
+})->name('transport');
+
+Route::get('/principal-message', function () {
+    return view('website.principal-message');
+})->name('principal-message');
+
+Route::get('/president-message', function () {
+    return view('website.president-message');
+})->name('president-message');
+
+
+
 
 
 // Home page (News + Events+video)

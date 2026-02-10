@@ -30,7 +30,7 @@
                 </p>
 
                 <div class="mt-4">
-                    <h4 class="name inner-title">Mr. Parveen Sarin</h4>
+                    <h4 class="name inner-title">Mr. Manoj Sarin</h4>
                     <p class="designation"><b>Principal </b></p>
                 </div>
                 {{-- <a href="#" class="btn-secondry my-4">
