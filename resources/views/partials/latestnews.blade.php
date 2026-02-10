@@ -1,5 +1,5 @@
 
-<div id="latestNewsBox" class="hidden lg:block">
+<div id="latestNewsBox" class="block lg:block">
     <div class="news-header">
         <span>Latest News</span>
         <div class="news-actions">
@@ -12,37 +12,38 @@
     <div id="newsContent" class="news-content">
         <div class="marquee-inner">
 
-            @foreach ($latestNews as $item)
-                @php
-                    $isNew = $item->created_at->greaterThan(now()->subDays(7));
-                @endphp
+            @if (isset($latestNews) && $latestNews->count())
+                @foreach ($latestNews as $item)
+                    @php
+                        $isNew = $item->created_at->greaterThan(now()->subDays(7));
+                    @endphp
 
-                <div class="news-item">
-                    <h4>
-                        📢 {{ $item->title }}
-                        @if ($isNew)
-                            <span class="new-badge">NEW</span>
-                        @endif
-                    </h4>
+                    <div class="news-item">
+                        <h4>
+                            📢 {{ $item->title }}
+                            @if ($isNew)
+                                <span class="new-badge">NEW</span>
+                            @endif
+                        </h4>
 
-                    <div class="news-meta">
-                        <span>{{ $item->created_at->format('d M Y') }}</span>
+                        <div class="news-meta">
+                            <span>{{ $item->created_at->format('d M Y') }}</span>
 
-                        @if ($item->pdf)
-                            <a href="{{ asset('storage/' . $item->pdf) }}" target="_blank" class="pdf-btn">
-                                PDF
-                            </a>
-                        @endif
+                            @if ($item->pdf)
+                                <a href="{{ asset('storage/' . $item->pdf) }}" target="_blank" class="pdf-btn">
+                                    PDF
+                                </a>
+                            @endif
+                        </div>
+
+                        <p>{{ \Illuminate\Support\Str::limit($item->description, 100) }}</p>
+
+                        <a href="{{ route('public.news') }}" class="read-more">
+                            Read More →
+                        </a>
                     </div>
-
-                    <p>{{ Str::limit($item->description, 100) }}</p>
-
-                    <a href="{{ route('public.news') }}" class="read-more">
-                        Read More →
-                    </a>
-                </div>
-            @endforeach
-
+                @endforeach
+            @endif
         </div>
     </div>
 </div>
@@ -55,7 +56,9 @@
         right: 20px;
         width: 320px;
         background: #ffffff;
-        border: 2px solid #pink;
+        border: 2px solid linear-gradient(to right,
+                var(--gradient-from, #a855f7),
+                var(--gradient-to, #f472b6));
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         z-index: 99999;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\Event;
 
 class HomeController extends Controller
 {
@@ -12,6 +13,10 @@ class HomeController extends Controller
                         ->take(6)
                         ->get();
 
-        return view('home', compact('videos'));
+        $events = Event::latest()
+                        ->take(3)
+                        ->get();
+
+        return view('website.home', compact('videos', 'events'));
     }
 }

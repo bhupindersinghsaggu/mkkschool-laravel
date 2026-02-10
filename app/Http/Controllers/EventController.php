@@ -11,13 +11,14 @@ class EventController extends Controller
     // Admin list
     public function index()
     {
+        $events = Event::latest()   // newest first (created_at)
+            ->take(3)   // 👈 ONLY 3 EVENTS
+            ->get();
 
-    
         $events = Event::latest()->paginate(10);
         return view('dashboard.events.index', compact('events'));
     }
 
-  
 
     public function publicIndex(Request $request)
     {

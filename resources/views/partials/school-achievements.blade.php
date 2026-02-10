@@ -2,7 +2,7 @@
     <h2 class="text-center font-semibold leading-tight py-8">
         <span class="inline-block  text-3xl md:text-5xl relative "> Events & Achievements
     </h2>
-    <div class="grid md:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-3 gap-6">
         @foreach ($events as $event)
             <div
                 class="border border-gray-200 hover:bg-gray-50 hover:border-gray-300/20 shadow-base-300/20 rounded-3xl p-2 shadow-lg overflow-hidden">
