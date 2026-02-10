@@ -24,22 +24,24 @@ class EventController extends Controller
     {
         $query = Event::query();
 
-        // 📅 Filter by year
+        // 📅 Filter by EVENT year
         if ($request->filled('year')) {
-            $query->whereYear('created_at', $request->year);
+            $query->whereYear('event_date', $request->year);
         }
 
-        // 🏷 Filter by type (column already exists)
+        // 🏷 Filter by type
         if ($request->filled('type')) {
             $query->where('type', $request->type);
         }
 
-        $events = $query->latest()
+        $events = $query
+            ->orderBy('event_date', 'desc')
             ->paginate(9)
             ->withQueryString();
 
-        // Years dropdown
-        $years = Event::selectRaw('YEAR(created_at) as year')
+        // Years dropdown (from event_date)
+        $years = Event::selectRaw('YEAR(event_date) as year')
+            ->whereNotNull('event_date')
             ->distinct()
             ->orderByDesc('year')
             ->pluck('year');

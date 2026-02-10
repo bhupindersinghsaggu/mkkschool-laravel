@@ -19,7 +19,7 @@
             {{-- FILTER FORM --}}
             {{-- FILTER BAR --}}
             <form method="GET" class="mb-8 bg-white p-4 rounded shadow">
-                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
                     {{-- Year Filter --}}
                     <select name="year" class="border rounded p-2">
