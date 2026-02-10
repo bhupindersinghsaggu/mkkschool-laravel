@@ -43,6 +43,18 @@ Route::get('/chemistery', function () {
     return view('website.chemistery');
 })->name('chemistery');
 
+Route::get('/physics', function () {
+    return view('website.physics');
+})->name('physics');
+
+Route::get('/biology', function () {
+    return view('website.biology');
+})->name('biology');
+
+Route::get('/math', function () {
+    return view('website.math');
+})->name('math');
+
 
 
 // Home page (News + Events+video)

@@ -80,9 +80,9 @@
                 transition-all duration-200">
                         <a href="{{ route('computerlab') }}" class="block px-4 py-3 hover:bg-gray-100">Computer Labs</a>
                         <a href="{{ route('chemistery') }}" class="block px-4 py-3 hover:bg-gray-100">Chemistery Lab</a>
-                        <a href="{{ route('chemistery') }}" class="block px-4 py-3 hover:bg-gray-100">Physics Lab</a>
-                        <a href="{{ route('chemistery') }}" class="block px-4 py-3 hover:bg-gray-100">Biology Lab</a>
-                        <a href="{{ route('chemistery') }}" class="block px-4 py-3 hover:bg-gray-100">Maths Lab</a>
+                        <a href="{{ route('physics') }}" class="block px-4 py-3 hover:bg-gray-100">Physics Lab</a>
+                        <a href="{{ route('biology') }}" class="block px-4 py-3 hover:bg-gray-100">Biology Lab</a>
+                        <a href="{{ route('math') }}" class="block px-4 py-3 hover:bg-gray-100">Maths Lab</a>
                     </div>
                 </div>
 
