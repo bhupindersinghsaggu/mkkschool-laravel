@@ -9,6 +9,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\TeacherController;
 
+
 use App\Models\News;
 use App\Models\Event;
 use App\Models\Video;
@@ -114,7 +115,10 @@ Route::get('/videos', function () {
 })->name('videos.public');
 
 
+// show all events onpage
 
+Route::get('/events', [EventController::class, 'publicIndex'])
+    ->name('events.public');
 
 
 // Public news page

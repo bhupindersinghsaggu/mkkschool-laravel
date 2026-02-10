@@ -99,6 +99,9 @@
                 <a href="{{ route('library') }}" class="block px-4 py-3 hover:bg-gray-100">
                     Rules of Discipline
                 </a>
+                <a href=" {{ route('events.public') }}" class="block px-4 py-3 hover:bg-gray-100">
+                    All Events/Achivements
+                </a>
 
                 <a href="{{ route('transport-rules') }}" class="block px-4 py-3 hover:bg-gray-100">
                     Transport Rules
