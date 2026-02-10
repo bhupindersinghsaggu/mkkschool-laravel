@@ -11,10 +11,46 @@ class EventController extends Controller
     // Admin list
     public function index()
     {
+
+    
         $events = Event::latest()->paginate(10);
         return view('dashboard.events.index', compact('events'));
     }
 
+  
+
+    public function publicIndex(Request $request)
+    {
+        $query = Event::query();
+
+        // 📅 Filter by year
+        if ($request->filled('year')) {
+            $query->whereYear('created_at', $request->year);
+        }
+
+        // 🏷 Filter by type (column already exists)
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        $events = $query->latest()
+            ->paginate(9)
+            ->withQueryString();
+
+        // Years dropdown
+        $years = Event::selectRaw('YEAR(created_at) as year')
+            ->distinct()
+            ->orderByDesc('year')
+            ->pluck('year');
+
+        // Types dropdown
+        $types = Event::select('type')
+            ->distinct()
+            ->whereNotNull('type')
+            ->pluck('type');
+
+        return view('website.events', compact('events', 'years', 'types'));
+    }
     // Store event
     public function store(Request $request)
     {
